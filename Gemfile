@@ -3,6 +3,7 @@ ruby '2.2.1'
 
 gem 'autoprefixer-rails'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'coveralls', require: false
 gem 'delayed_job_active_record'
 gem 'flutie'
 gem 'i18n-tasks'
