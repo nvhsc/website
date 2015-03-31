@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331040144) do
+ActiveRecord::Schema.define(version: 20150331050905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,32 +33,10 @@ ActiveRecord::Schema.define(version: 20150331040144) do
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "divisions", force: :cascade do |t|
-    t.string  "name",  limit: 255
-    t.integer "start"
-    t.integer "end"
-  end
-
-  create_table "players", force: :cascade do |t|
-    t.string   "first",      limit: 255
-    t.string   "last",       limit: 255
-    t.date     "dob"
-    t.string   "phone",      limit: 255
-    t.string   "email",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "rosters", force: :cascade do |t|
-    t.integer "player_id"
-    t.integer "team_id"
-    t.integer "division_id"
-    t.integer "season_id"
-  end
-
-  create_table "seasons", force: :cascade do |t|
-    t.string "name",  limit: 255
-    t.date   "start"
-    t.date   "end"
+    t.string   "name",       null: false
+    t.integer  "sport_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sports", force: :cascade do |t|
@@ -70,10 +48,6 @@ ActiveRecord::Schema.define(version: 20150331040144) do
     t.datetime "icon_updated_at",   null: false
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-  end
-
-  create_table "teams", force: :cascade do |t|
-    t.string "name", limit: 255
   end
 
 end
