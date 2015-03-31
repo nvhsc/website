@@ -1,11 +1,12 @@
-require "simplecov"
+require 'simplecov'
 require 'coveralls'
 SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do
   add_filter 'app/secrets'
 end
 
-require "webmock/rspec"
+require 'paperclip/matchers'
+require 'webmock/rspec'
 
 # http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
