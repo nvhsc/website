@@ -1,10 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Season, :type => :model do
+  it_behaves_like 'a timestamped model'
+
   it { is_expected.to have_db_column(:name).of_type(:string) }
   it { is_expected.to have_db_column(:status).of_type(:string) }
   it { is_expected.to have_db_column(:start_date).of_type(:date) }
   it { is_expected.to have_db_column(:end_date).of_type(:date) }
+
+  it { is_expected.to have_many :teams }
 
   it { is_expected.to validate_presence_of(:name) }
   it { is_expected.to validate_presence_of(:status) }
