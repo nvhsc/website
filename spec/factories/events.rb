@@ -1,20 +1,19 @@
 FactoryGirl.define do
   factory :event do
     name 'Kickoff Party'
-    event_type 'party'
     start_at { Time.new(2015,4,5,3) }
     end_at { Time.new(2015,4,5,6) }
 
-    trait :game do
+    factory :game do
+      type 'Game'
     end
 
-    trait :practice do
+    factory :practice do
+      type 'Practice'
     end
 
-    trait :tournament do
-    end
-
-    trait :party do
+    factory :tournament do
+      type 'Tournament'
     end
   end
 end

@@ -35,6 +35,7 @@ module Nvhsc
     # Disable generator clutter
     config.generators do |generate|
       generate.helper false
+      generate.hidden_namespaces << :test_unit
       generate.javascript_engine false
       generate.request_specs false
       generate.routing_specs false

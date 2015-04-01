@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   include Temporal
-  TYPES = %w(game practice tournament party)
+  TYPES = %w(Game Practice Tournament)
   validates_presence_of :name
-  validates_inclusion_of :event_type, in: TYPES
+  validates_inclusion_of :type, in: TYPES, allow_nil: true
 end
