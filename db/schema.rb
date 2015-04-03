@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401223144) do
+ActiveRecord::Schema.define(version: 20150403043503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,28 @@ ActiveRecord::Schema.define(version: 20150401223144) do
   end
 
   add_index "events", ["tournament_id"], name: "index_events_on_tournament_id", using: :btree
+
+  create_table "players", force: :cascade do |t|
+    t.string   "first_name",          null: false
+    t.string   "middle_name"
+    t.string   "last_name",           null: false
+    t.string   "gender"
+    t.date     "birthdate"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "rosters", force: :cascade do |t|
+    t.integer  "team_id",    null: false
+    t.integer  "player_id",  null: false
+    t.string   "role",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "seasons", force: :cascade do |t|
     t.string   "name",       null: false
