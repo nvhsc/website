@@ -115,6 +115,8 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    faker (1.4.3)
+      i18n (~> 0.5)
     ffi (1.9.8)
     flutie (2.0.0)
     formatador (0.2.5)
@@ -240,6 +242,7 @@ GEM
       ffi (>= 0.5.0)
     recipient_interceptor (0.1.2)
       mail
+    redcarpet (3.2.3)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     rest-client (1.8.0)
@@ -350,6 +353,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   factory_girl_rails
+  faker
   flutie
   formulaic
   guard-rspec
@@ -367,6 +371,7 @@ DEPENDENCIES
   rails_12factor
   rails_stdout_logging
   recipient_interceptor
+  redcarpet
   rspec-rails (~> 3.1.0)
   sass-rails (~> 5.0)
   shoulda-matchers

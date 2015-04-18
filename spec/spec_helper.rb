@@ -13,6 +13,7 @@ end
 
 require 'paperclip/matchers'
 require 'webmock/rspec'
+require 'faker'
 
 # http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|

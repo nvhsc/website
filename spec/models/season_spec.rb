@@ -5,6 +5,9 @@ RSpec.describe Season, :type => :model do
   it_behaves_like 'a time-based model'
 
   it { is_expected.to have_db_column(:name).of_type(:string) }
+  it { is_expected.to have_db_column(:sport_id).of_type(:integer) }
+  it { is_expected.to have_db_index(:sport_id) }
+  it { is_expected.to belong_to :sport }
   it { is_expected.to have_many :teams }
   it { is_expected.to validate_presence_of(:name) }
   

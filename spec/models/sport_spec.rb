@@ -8,6 +8,7 @@ RSpec.describe Sport, :type => :model do
   it { is_expected.to have_db_column(:description).of_type(:text) }
 
   it { is_expected.to have_many(:divisions) }
+  it { is_expected.to have_many(:seasons) }
   it { is_expected.to have_many(:teams).through(:divisions) }
 
   it { is_expected.to validate_presence_of(:name) }
